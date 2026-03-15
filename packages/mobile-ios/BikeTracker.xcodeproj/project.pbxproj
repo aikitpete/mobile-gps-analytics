@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36E4543519FB0254007D5908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E4543419FB0254007D5908 /* main.m */; };
+		36E4543819FB0254007D5908 /* CFAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E4543719FB0254007D5908 /* CFAAppDelegate.m */; };
+		36E4543B19FB0254007D5908 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E4543A19FB0254007D5908 /* ViewController.m */; };
+		36E4543E19FB0254007D5908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E4543C19FB0254007D5908 /* Main.storyboard */; };
+		36E4544019FB0254007D5908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36E4543F19FB0254007D5908 /* Images.xcassets */; };
+		36E4544319FB0254007D5908 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E4544119FB0254007D5908 /* LaunchScreen.xib */; };
+		36E4544F19FB0254007D5908 /* BikeTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E4544E19FB0254007D5908 /* BikeTrackerTests.m */; };
+		36E4545919FD0A03007D5908 /* MainScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E4545819FD0A03007D5908 /* MainScreen.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36E4544919FB0254007D5908 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36E4542719FB0253007D5908 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36E4542E19FB0254007D5908;
+			remoteInfo = BikeTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36E4542F19FB0254007D5908 /* BikeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36E4543319FB0254007D5908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36E4543419FB0254007D5908 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36E4543619FB0254007D5908 /* CFAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFAAppDelegate.h; sourceTree = "<group>"; };
+		36E4543719FB0254007D5908 /* CFAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFAAppDelegate.m; sourceTree = "<group>"; };
+		36E4543919FB0254007D5908 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		36E4543A19FB0254007D5908 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		36E4543D19FB0254007D5908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		36E4543F19FB0254007D5908 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		36E4544219FB0254007D5908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		36E4544819FB0254007D5908 /* BikeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36E4544D19FB0254007D5908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36E4544E19FB0254007D5908 /* BikeTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BikeTrackerTests.m; sourceTree = "<group>"; };
+		36E4545819FD0A03007D5908 /* MainScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainScreen.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36E4542C19FB0254007D5908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36E4544519FB0254007D5908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36E4542619FB0253007D5908 = {
+			isa = PBXGroup;
+			children = (
+				36E4543119FB0254007D5908 /* BikeTracker */,
+				36E4544B19FB0254007D5908 /* BikeTrackerTests */,
+				36E4543019FB0254007D5908 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36E4543019FB0254007D5908 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36E4542F19FB0254007D5908 /* BikeTracker.app */,
+				36E4544819FB0254007D5908 /* BikeTrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36E4543119FB0254007D5908 /* BikeTracker */ = {
+			isa = PBXGroup;
+			children = (
+				36E4543619FB0254007D5908 /* CFAAppDelegate.h */,
+				36E4543719FB0254007D5908 /* CFAAppDelegate.m */,
+				36E4543919FB0254007D5908 /* ViewController.h */,
+				36E4543A19FB0254007D5908 /* ViewController.m */,
+				36E4543C19FB0254007D5908 /* Main.storyboard */,
+				36E4543F19FB0254007D5908 /* Images.xcassets */,
+				36E4544119FB0254007D5908 /* LaunchScreen.xib */,
+				36E4543219FB0254007D5908 /* Supporting Files */,
+				36E4545819FD0A03007D5908 /* MainScreen.xib */,
+			);
+			path = BikeTracker;
+			sourceTree = "<group>";
+		};
+		36E4543219FB0254007D5908 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36E4543319FB0254007D5908 /* Info.plist */,
+				36E4543419FB0254007D5908 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36E4544B19FB0254007D5908 /* BikeTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				36E4544E19FB0254007D5908 /* BikeTrackerTests.m */,
+				36E4544C19FB0254007D5908 /* Supporting Files */,
+			);
+			path = BikeTrackerTests;
+			sourceTree = "<group>";
+		};
+		36E4544C19FB0254007D5908 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36E4544D19FB0254007D5908 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36E4542E19FB0254007D5908 /* BikeTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36E4545219FB0254007D5908 /* Build configuration list for PBXNativeTarget "BikeTracker" */;
+			buildPhases = (
+				36E4542B19FB0254007D5908 /* Sources */,
+				36E4542C19FB0254007D5908 /* Frameworks */,
+				36E4542D19FB0254007D5908 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeTracker;
+			productName = BikeTracker;
+			productReference = 36E4542F19FB0254007D5908 /* BikeTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36E4544719FB0254007D5908 /* BikeTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36E4545519FB0254007D5908 /* Build configuration list for PBXNativeTarget "BikeTrackerTests" */;
+			buildPhases = (
+				36E4544419FB0254007D5908 /* Sources */,
+				36E4544519FB0254007D5908 /* Frameworks */,
+				36E4544619FB0254007D5908 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36E4544A19FB0254007D5908 /* PBXTargetDependency */,
+			);
+			name = BikeTrackerTests;
+			productName = BikeTrackerTests;
+			productReference = 36E4544819FB0254007D5908 /* BikeTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36E4542719FB0253007D5908 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Peter Gerhat";
+				TargetAttributes = {
+					36E4542E19FB0254007D5908 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					36E4544719FB0254007D5908 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 36E4542E19FB0254007D5908;
+					};
+				};
+			};
+			buildConfigurationList = 36E4542A19FB0253007D5908 /* Build configuration list for PBXProject "BikeTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 36E4542619FB0253007D5908;
+			productRefGroup = 36E4543019FB0254007D5908 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36E4542E19FB0254007D5908 /* BikeTracker */,
+				36E4544719FB0254007D5908 /* BikeTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36E4542D19FB0254007D5908 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36E4545919FD0A03007D5908 /* MainScreen.xib in Resources */,
+				36E4543E19FB0254007D5908 /* Main.storyboard in Resources */,
+				36E4544319FB0254007D5908 /* LaunchScreen.xib in Resources */,
+				36E4544019FB0254007D5908 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36E4544619FB0254007D5908 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36E4542B19FB0254007D5908 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36E4543B19FB0254007D5908 /* ViewController.m in Sources */,
+				36E4543819FB0254007D5908 /* CFAAppDelegate.m in Sources */,
+				36E4543519FB0254007D5908 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36E4544419FB0254007D5908 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36E4544F19FB0254007D5908 /* BikeTrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36E4544A19FB0254007D5908 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36E4542E19FB0254007D5908 /* BikeTracker */;
+			targetProxy = 36E4544919FB0254007D5908 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36E4543C19FB0254007D5908 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36E4543D19FB0254007D5908 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		36E4544119FB0254007D5908 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36E4544219FB0254007D5908 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36E4545019FB0254007D5908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		36E4545119FB0254007D5908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36E4545319FB0254007D5908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BikeTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		36E4545419FB0254007D5908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BikeTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		36E4545619FB0254007D5908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeTracker.app/BikeTracker";
+			};
+			name = Debug;
+		};
+		36E4545719FB0254007D5908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeTracker.app/BikeTracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36E4542A19FB0253007D5908 /* Build configuration list for PBXProject "BikeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36E4545019FB0254007D5908 /* Debug */,
+				36E4545119FB0254007D5908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36E4545219FB0254007D5908 /* Build configuration list for PBXNativeTarget "BikeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36E4545319FB0254007D5908 /* Debug */,
+				36E4545419FB0254007D5908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		36E4545519FB0254007D5908 /* Build configuration list for PBXNativeTarget "BikeTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36E4545619FB0254007D5908 /* Debug */,
+				36E4545719FB0254007D5908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36E4542719FB0253007D5908 /* Project object */;
+}
