@@ -1,6 +1,6 @@
-# mobile-gps-tracker
+# mobile-gps-analytics
 
-A full-stack GPS tracking and analysis platform combining a mobile iOS tracker with a web-based backend for storing, analyzing, and visualizing location traces.
+A full-stack GPS tracking and analysis tool combining a mobile iOS tracker with a web-based backend for storing, analyzing, and visualizing location traces.
 
 The project explores how mobile GPS data can be collected, stored, and analyzed while also measuring the battery and performance impact of continuous location tracking.
 
