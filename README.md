@@ -6,6 +6,15 @@ Collect GPS traces from a phone, store them in SQL, look at them on a map, and m
 
 Started in 2014/15 as a student project on cycling behaviour in the Öresund region, and later brought up to date: PDO prepared statements, hashed passwords, CSRF protection, role-based access and tests.
 
+<p>
+  <img src="docs/battery-analysis.png" width="49%" alt="Battery analysis: tracked hours, battery used, percent per hour and per km per user">
+  <img src="docs/data-table.png" width="49%" alt="Data table of recorded GPS samples">
+</p>
+
+*Screenshots use synthetic sample data (two generated tracks), not real people's locations.*
+
+**What it is useful for:** a small, complete reference for collecting location and battery samples from a mobile browser, storing them safely (prepared statements, hashed passwords, CSRF protection, per-role access) and turning them into a measurable number: how much battery continuous tracking costs per hour and per kilometre. It was a student project, so treat it as a compact example rather than a production system.
+
 ## What is in the repo
 
 | Path | What it is |
