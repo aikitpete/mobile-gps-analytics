@@ -1,51 +1,34 @@
-drop table if exists users;
-drop table if exists usagedata;
+-- MySQL / MariaDB schema. Create the database first, e.g.:
+--   CREATE DATABASE gps_analytics CHARACTER SET utf8mb4;
+-- then: mysql gps_analytics < database.sql
 
-create table users (
-	uid INT NOT NULL auto_increment,
-	name varchar(20) NOT NULL,
-	surname varchar(20) NOT NULL,
-	email varchar(40) NOT NULL,
-	password char(40) NOT NULL,
-	feedback char(160) NOT NULL,
-	category char(20) NOT NULL,
-	primary key(uid),
-	unique(email)
-) CHARACTER SET = utf8;
+CREATE TABLE IF NOT EXISTS users (
+    uid           INT          NOT NULL AUTO_INCREMENT,
+    name          VARCHAR(40)  NOT NULL,
+    surname       VARCHAR(40)  NOT NULL,
+    email         VARCHAR(255) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    feedback      VARCHAR(500) NOT NULL DEFAULT '',
+    category      ENUM('usability_analyst', 'data_analyst', 'data_admin', 'user_admin')
+                               NOT NULL DEFAULT 'usability_analyst',
+    created_at    TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (uid),
+    UNIQUE KEY uq_users_email (email)
+) DEFAULT CHARSET = utf8mb4;
 
-insert into users (name,surname,email,password,feedback,category) values
-("Peter","Gerhat","peto.gerhat@gmail.com","piglin","default","user_admin"),
-("Jack","Smith","shijunpeng66@gmail.com","123456","default","data_admin"),
-("Emelie","Torstensson","emelie@emelietorstensson.se","123456","default","data_admin"),
-("John","Doe","john.doe@mail.com","password","default","data_analyst");
-
-
-create table usagedata (
-	id INT NOT NULL auto_increment,
-	uid INT NOT NULL,
-	latitude DOUBLE NOT NULL,
-	longitude DOUBLE NOT NULL,
-	altitude DOUBLE NOT NULL,
-	accuracy INT NOT NULL,
-    batterycharging boolean NOT NULL,
-    batterystatus DOUBLE NOT NULL,
-    batterysupported boolean NOT NULL,
-    chippresent boolean NOT NULL,
-    timedatestamp timestamp NOT NULL,
-	notes varchar(160) NULL,
-    geolocation0 varchar(40) NULL,
-    geolocation1 varchar(40) NULL,
-    geolocation2 varchar(40) NULL,
-    geolocation3 varchar(20) NULL,
-    geolocation4 varchar(20) NULL,
-    geolocation5 varchar(20) NULL,
-    geolocation6 varchar(20) NULL,
-    geolocation7 varchar(20) NULL,
-	primary key(id)
-) CHARACTER SET = utf8;
-
-set names utf8;
-insert into usagedata (uid,latitude,longitude,altitude,accuracy,batterycharging,batterystatus,
-                       batterysupported,chippresent,timedatestamp) values
-('2','55.7','13.1','10','20','false','0.5','false','false','2014-01-01 00:00:01');
-
+CREATE TABLE IF NOT EXISTS usagedata (
+    id                BIGINT       NOT NULL AUTO_INCREMENT,
+    uid               INT          NOT NULL,
+    latitude          DOUBLE       NOT NULL,
+    longitude         DOUBLE       NOT NULL,
+    altitude          DOUBLE       NULL,
+    accuracy          DOUBLE       NULL,
+    battery_supported TINYINT(1)   NOT NULL DEFAULT 0,
+    battery_level     DOUBLE       NULL,      -- 0.0 .. 1.0
+    battery_charging  TINYINT(1)   NULL,
+    notes             VARCHAR(255) NULL,
+    recorded_at       TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- stored in UTC
+    PRIMARY KEY (id),
+    KEY idx_usage_uid_time (uid, recorded_at),
+    CONSTRAINT fk_usage_user FOREIGN KEY (uid) REFERENCES users (uid) ON DELETE CASCADE
+) DEFAULT CHARSET = utf8mb4;
