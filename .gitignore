@@ -16,3 +16,11 @@ yarn-error.log*
 .idea/
 .vscode/
 *.iml
+
+# Xcode user state
+xcuserdata/
+*.xcuserstate
+
+# local config / data
+.env
+*.sqlite

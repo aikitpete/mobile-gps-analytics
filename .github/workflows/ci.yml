@@ -1,0 +1,15 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_sqlite
+      - name: Lint PHP
+        run: find packages/backend -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Smoke tests
+        run: bash packages/backend/tests/run.sh

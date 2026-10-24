@@ -1,125 +1,66 @@
 # mobile-gps-analytics
 
-A full-stack GPS tracking and analysis tool combining a mobile iOS tracker with a web-based backend for storing, analyzing, and visualizing location traces.
+Collect GPS traces from a phone, store them in SQL, look at them on a map, and measure what continuous tracking costs in battery.
 
-The project explores how mobile GPS data can be collected, stored, and analyzed while also measuring the battery and performance impact of continuous location tracking.
+[![CI](https://github.com/aikitpete/mobile-gps-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/aikitpete/mobile-gps-analytics/actions/workflows/ci.yml)
 
----
+Started in 2014/15 as a student project on cycling behaviour in the Öresund region, and later brought up to date: PDO prepared statements, hashed passwords, CSRF protection, role-based access and tests.
 
-## Overview
+## What is in the repo
 
-This repository is organized as a small monorepo containing two main packages:
+| Path | What it is |
+|---|---|
+| `packages/backend` | PHP 8 + MySQL web app: collection API, map view, data table, battery analysis |
+| `packages/mobile-ios` | Small Objective-C CoreLocation logger used to evaluate native tracking (writes positions to the console) |
 
-- **`packages/mobile-ios`** – iOS GPS tracking application that records location data during activities such as bike rides.
-- **`packages/backend`** – web backend responsible for ingesting, storing, and analyzing GPS traces.
+## Backend features
 
-Together they form an **end‑to‑end telemetry pipeline**:
+- **Collect** – a browser page samples position (Geolocation API) and battery level (Battery Status API, Chromium browsers) at a chosen interval and posts it to the API.
+- **Map** – recorded positions per user on an OpenStreetMap/Leaflet map.
+- **Data** – paged, sortable table of raw samples; deletion is limited to the `data_admin` role.
+- **Battery analysis** – per user: tracked hours, battery used, **% per hour** and **% per km**. Charging periods and gaps longer than 15 minutes are excluded (`src/analysis.php`).
+- **Access model** – new accounts get the `usability_analyst` role and only see their own data; `data_analyst` and `data_admin` see everyone's.
 
-1. The iOS app collects GPS coordinates and activity data.
-2. Data is sent to backend endpoints.
-3. The backend stores traces in a database.
-4. Analysis tools visualize usage patterns and elevation data.
+## Run it locally
 
----
+Requirements: PHP 8.1+ with `pdo_mysql`, MySQL or MariaDB.
 
-## Repository Structure
+```bash
+cd packages/backend
+mysql -e "CREATE DATABASE gps_analytics CHARACTER SET utf8mb4" && mysql gps_analytics < database.sql
 
-```
-packages/
-│
-├─ backend/
-│  ├─ collect.php                # Data ingestion endpoint
-│  ├─ retrievedata.php           # Data retrieval API
-│  ├─ data.php                   # Data access layer
-│  ├─ usagedata.php              # Usage statistics queries
-│  ├─ analyze.php                # Data analysis views
-│  ├─ usage.php                  # Usage analytics dashboard
-│  ├─ view.php                   # Visualization interface
-│  ├─ database.sql               # Database schema
-│  ├─ ElevationChartCreator.py   # Elevation profile generation
-│  ├─ css/                       # UI styles
-│  └─ js/                        # Frontend scripts
-│
-└─ mobile-ios/
-   ├─ BikeTracker.xcodeproj      # Xcode project
-   ├─ BikeTracker/               # iOS application source
-   └─ BikeTrackerTests/          # Unit tests
+export DB_DSN="mysql:host=127.0.0.1;dbname=gps_analytics;charset=utf8mb4"
+export DB_USER=gps_app DB_PASS=change-me      # see .env.example
+
+# optional: create an administrator
+php bin/create-user.php you@example.com Ada Lovelace data_admin
+
+php -S 127.0.0.1:8080 -t public
 ```
 
----
+Open <http://127.0.0.1:8080>. Geolocation needs HTTPS on a phone, so use a tunnel or a TLS-terminating reverse proxy for field tests.
 
-## Backend (packages/backend)
+## Tests
 
-The backend provides the web infrastructure for receiving and analyzing GPS traces.
+```bash
+bash packages/backend/tests/run.sh
+```
 
-Key responsibilities:
+Runs unit tests for the analysis functions and an end-to-end pass (sign up, sign in, collect, list, role checks, CSRF, injection attempt) against PHP's built-in server with a temporary SQLite database. CI runs the same script.
 
-- Accept incoming GPS data from mobile devices
-- Persist location traces in a relational database
-- Provide APIs for retrieving and analyzing activity data
-- Render usage statistics and activity visualizations
+## Layout
 
-Core components:
+```
+packages/backend
+├─ public/      web root: index.php (pages), api.php (JSON API), css/, js/
+├─ src/         bootstrap (config, PDO, session, CSRF), analysis functions, page templates
+├─ bin/         create-user.php
+├─ tests/       smoke tests and SQLite schema
+└─ database.sql MySQL schema
+```
 
-- **PHP ingestion endpoints** for receiving GPS data
-- **SQL schema (`database.sql`)** defining the storage model
-- **Analytics pages** for exploring collected traces
-- **Elevation analysis** using the Python script `ElevationChartCreator.py`
+## Configuration
 
----
+All settings come from environment variables (`DB_DSN`, `DB_USER`, `DB_PASS`). Nothing secret is stored in the repository.
 
-## Mobile App (packages/mobile-ios)
-
-The iOS application records GPS coordinates during activities such as cycling.
-
-Key capabilities:
-
-- Capture location updates from the device GPS
-- Record activity sessions
-- Send GPS data to backend endpoints
-- Provide a simple interface for tracking rides
-
-The mobile application is implemented as a native iOS project using Xcode.
-
----
-
-## Technologies
-
-Backend:
-
-- PHP
-- SQL
-- JavaScript
-- Python (data visualization / elevation charts)
-
-Mobile:
-
-- Swift / Objective‑C based iOS application
-- Xcode project structure
-
----
-
-## Why this project is interesting
-
-This project demonstrates **end‑to‑end telemetry engineering**, covering:
-
-- mobile sensor data collection
-- API-based data ingestion
-- backend data storage design
-- analytics dashboards
-- elevation and activity analysis
-- mobile battery impact considerations
-
-It represents an early exploration of **mobile telemetry pipelines**, which are now common in fitness tracking, IoT, and location‑based applications.
-
----
-
-## Possible Extensions
-
-Potential future improvements could include:
-
-- replacing the PHP backend with a modern API framework
-- adding map visualizations using Leaflet or Mapbox
-- integrating time-series storage for GPS traces
-- exporting ride data in GPX format
-- adding battery usage instrumentation for GPS sampling strategies
+MIT licence.
