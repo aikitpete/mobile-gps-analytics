@@ -1,8 +1,8 @@
 # mobile-gps-analytics
 
-Collect GPS traces from a phone, store them in SQL, look at them on a map, and measure what continuous tracking costs in battery.
+[![CI](https://img.shields.io/github/actions/workflow/status/aikitpete/mobile-gps-analytics/ci.yml?branch=master&label=CI)](https://github.com/aikitpete/mobile-gps-analytics/actions/workflows/ci.yml) [![License](https://img.shields.io/github/license/aikitpete/mobile-gps-analytics)](LICENSE) ![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-[![CI](https://github.com/aikitpete/mobile-gps-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/aikitpete/mobile-gps-analytics/actions/workflows/ci.yml)
+Collect GPS traces from a phone, store them in SQL, look at them on a map, and measure what continuous tracking costs in battery.
 
 Started in 2014/15 as a student project on cycling behaviour in the Öresund region, and later brought up to date: PDO prepared statements, hashed passwords, CSRF protection, role-based access and tests.
 
